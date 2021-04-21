@@ -1,0 +1,99 @@
+#cards {
+  display:flex;
+  flex-wrap:wrap;
+
+} 
+.card{
+  /* 卡片在容器中的排版 */
+  /* flex-basis,flex-grow,flex-shrink(複習的時候要弄懂 */
+  flex:7% 0 1 ; 
+  height:8vw;
+  border: solid 2px #e0e0e0;
+  margin:2px;
+  box-sizing: border-box; 
+  /* 了解一下 box-sizing; */
+
+  /* 卡片內部元件的排版 */
+  display:flex;
+  flex-direction: column;
+  /* 看一下 space-around的意思 */
+  justify-content: space-around;
+}
+
+.card img{
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p{
+  margin: 3px;
+  font-size:20px; 
+}
+/* 下面字的翻轉 卡給~~~ */
+.card p:last-child{
+  transform:rotate(180deg);
+}
+.back{
+  background: url('https://i.imgur.com/X5nacsZ.png');
+  background-size: cover;
+}
+
+.paired{
+  background-color: #dae0e3;
+}
+
+#header {
+  /* border : red 1px solid; */
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width:93.5%;
+  margin : 0;
+}
+
+#header .title{
+  display:flex;
+  width:100%;
+  justify-content: flex-end;
+}
+
+#header .title img{
+  max-width: 3em; ;
+}
+
+
+#header .title h2{
+  padding-left: :0.5em;
+}
+.wrong{
+  animation:wrongpairedanimation 0.2s;
+  animation-iteration-count: 5;
+
+}
+
+@keyframes wrongpairedanimation{
+
+  100%{
+    border:2px solid #f1c232
+  }
+}
+
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
